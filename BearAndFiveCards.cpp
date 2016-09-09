@@ -1,38 +1,55 @@
-#include<bits/stdc++.h>
+/*codeforces round 367, div2 ,A*/
+#include<iostream>
 using namespace std;
 int main(int argc, char const *argv[])
 {
-    int total = 0;
-    int s[5];
-
+    int a[1000],freq[1000];
+    int c,m,total=0;
     for(int i=0;i<5;i++){
-        cin>>s[i];
-        total += s[i];
+        cin>>a[i];
+        total += a[i];
     }
-    int b;
-    b = total;
-    //two cards: 
-    for(int i=0;i<5;i++){
-        for(int j= i+1; j<5;j++){
-                if(s[i] == s[j]){
-                    b = min(b,total - 2*s[i]);
-                }
-        }
+    if(total == 5*a[0]){            /*if all thr values are same, total -=3*value */
+        total = total - 3*a[0];
+        cout<<total<<endl;
+        return 0;
     }
-
     for(int i=0;i<5;i++){
-        for(int j= i+1; j<5;j++){
-            for(int k = j+1; k<5;k++){
-                if(s[i] == s[j] && s[i] == s[k]){
-                
-                    b = min(b,total - 3*s[i]);
-                }
+        c = 1;
+        for(int j =i+1;j<5;j++){
+            if(a[i] == a[j]){
+                c++;
             }
         }
+        freq[i] = c;
     }
-
-    cout<<s<<endl;
-
-
+    int k =0;
+    int sum1[5],sum2 = 999999;
+    for(int i=0;i<5;i++){
+        sum1[i] = 9999999;
+    }
+    for(int i=0;i<5;i++){
+        if(freq[i] == 2){
+            sum1[i] = total -2*a[i];
+            k++;
+        }else if(freq[i] == 3){
+            sum1[i] = total -3*a[i];
+            k++;
+        }
+      //  cout<<freq[i]<<" ";
+    }
+    int flag = 0;
+    for(int i=0;i<5;i++){
+        if(sum1[i] < sum2){
+            sum2 = sum1[i];
+            flag =1;
+        }
+    }
+    if(flag != 0){
+        cout<<sum2<<endl;
+    }
+    else if(flag ==0){
+        cout<<total<<endl;
+    }
     return 0;
 }
