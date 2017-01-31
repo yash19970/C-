@@ -1,3 +1,4 @@
+/* coedforces round 359 div2: A*/
 #include<iostream>
 using namespace std;
 int main(int argc, char const *argv[])

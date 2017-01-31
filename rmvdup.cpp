@@ -19,3 +19,25 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
+
+
+/*LOGIC 2.*/
+#include<iostream>
+using namespace std;
+int main(int argc, char const *argv[])
+{
+	int n,c;
+	int a[100];
+	cin>>n;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+	}
+	for(int i=0;i<n;i++){
+		if(a[i] < a[i+1] && i+1 <n){
+			cout<<a[i];
+		
+		}
+	}
+	cout<<a[n-1];
+	return 0;
+}
