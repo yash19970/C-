@@ -7,12 +7,12 @@ struct person
 };
 int main(int argc, char const *argv[])
 {
-	struct person *p1,obj1;
+	/*//struct person *p1,obj1;
 	p1 = &obj1;
 	(*p1).age = 10; (*p1).name = "yahs";
 	//cout<<(*p1).age<<(*p1).name<<endl;
 	cout<<p1->name; cout<<p1->age;
-
+	*/
 
 	/*int a[]= {1,2,3};
 	int y =20;
@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
 		p++;
 	}*/
 
-	/*int x =2;
+	int x =2;
 	int *p;
 	int **pp;
 	p = &x;
@@ -37,8 +37,9 @@ int main(int argc, char const *argv[])
 	cout<<"Address of x: "<<p<<endl;
 	cout<<"Address of p: "<<pp<<endl;
 	cout<<"value of x: "<<*p<<endl;
-	cout<<"value of p: "<<**pp<<endl;*/
-
+	cout<<"value of p: "<<**pp<<endl;
+int m = *p;
+cout<<m;	
 	
 	return 0;
 }
