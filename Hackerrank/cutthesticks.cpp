@@ -4,7 +4,7 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-	vector<int> a;
+	vector<int> a,v2;
 	int n,k,c=0,size=0,u=0,s1;
 	cin>>n;
 	for(int i=0;i<n;i++){
@@ -13,7 +13,8 @@ int main(int argc, char const *argv[])
 	}
 	size = a.size();
 	while(size >0){
-		cout<<size<<endl;
+		//cout<<size<<endl;
+		v2.push_back(size);
 		s1 =0;
 		sort(a.begin(),a.end());
 		int min = 9999;	
@@ -33,6 +34,10 @@ int main(int argc, char const *argv[])
 			} 
 		} 
 		size = size-s1;
+	}
+	for (int i = 0; i < v2.size(); ++i)
+	{
+		cout<<v2[i]<<" ";
 	}
 	return 0;
 }
