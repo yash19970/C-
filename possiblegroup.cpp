@@ -1,5 +1,4 @@
-/*geeksforgeeks possible groups*/
-#include<iostream>
+/*#include<iostream>
 using namespace std;
 int main(int argc, char const *argv[])
 {
@@ -26,7 +25,6 @@ int main(int argc, char const *argv[])
 	}
 	int total =0;
 	total = c2+ c;
-	//cout<<total<<endl;
 	return 0;
 }
-
+*/
