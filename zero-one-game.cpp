@@ -1,42 +1,55 @@
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
-
-int main(){
-    int g;
-    int flag=0,c1,c2,l,j,size2;
-    cin >> g;
-    for(int a0 = 0; a0 < g; a0++){
-        int n;
-        cin >> n;
-        c1=0; c2=0; size2=0;
-        vector<int> sq,v;
-        for(int i = 0; i < n; i++){
-           cin >>l;
-            sq.push_back(l); //v.push_back(l);
+int main(int argc, char const *argv[])
+{
+    list<int> list1;
+    int n,t,l,c1;
+    cin>>t;
+    for (int i = 0; i < t; ++i)
+    {
+        c1=0;
+        list1.clear();
+        cin>>n;
+        for (int j = 0; j <n ; ++j)
+        {
+            cin>>l;
+            list1.push_back(l);
         }
-        int size = sq.size(); j=0;
-        int len = size;
-        while(size >2 && j<size){
-            if(j!=0 && j!=size-1 && sq[j-1] ==0 && sq[j+1] ==0){
-                sq.erase(sq.begin()+j); 
-                size = sq.size();
-                c1++;
-                j=0;
+        
+        list<int>::iterator current = list1.begin();
+        list<int>::iterator mid = list1.begin();
+        mid++;
+        list<int>::iterator next = mid;
+        next++;
+        int flag=0,c2=0;
+        while(list1.size()>2)
+        {
+            if(*current ==0 && next !=list1.end() && *next==0){
+                    mid = list1.erase(mid);
+                    next = mid;
+                    c1++;
+                    next++; flag=1;
             }else{
-                j++;
-            }
-            if(j>len){
+                current++;
+                mid++; next++;
+            }    
+            if(next == list1.end() && flag==1){
+                flag=0;
+                current = list1.begin();
+                mid = list1.begin(); mid++;
+                next = mid; next++; 
+            }else if(next == list1.end() && flag==0){
                 break;
-            }
+            }        
         }
-        if(c1==0){
-                cout<<"Bob"<<endl;
-        }else if(c1%2 ==0){
-                cout<<"Bob"<<endl;
-        }else if(c1%2 >=1){
-                cout<<"Alice"<<endl;
-        } 
+    if(c1 == 1){
+        cout<<"Alice"<<endl;
+    }else if(c1%2==0){
+        cout<<"Bob"<<endl;
+    }else{
+        cout<<"Alice"<<endl;
     }
+    }
+
     return 0;
 }
