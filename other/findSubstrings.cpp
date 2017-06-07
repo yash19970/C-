@@ -12,7 +12,8 @@ int main(int argc, char const *argv[])
 	{
 		for (int k = 0; k <s1.size(); ++k)
 		{
-			if(i & (1<<k)) cout<<s[k]<<" ";
+			cout<<i<<" "<<1<<k;
+		//	if(i & (1<<k)) cout<<s[k]<<" ";
 		}cout<<endl;
 	}
 	return 0;
