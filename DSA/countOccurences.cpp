@@ -28,7 +28,7 @@ int maxIndex(vector<int>v, int x){
 		if(x == v[mid]){
 			flag = mid; 
 			low = mid+1;			
-		}else if(x <= v[mid]){
+		}else if(x < v[mid]){
 			high = mid-1;
 		}else{
 			low = mid+1;
